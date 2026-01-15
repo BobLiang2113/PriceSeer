@@ -40,7 +40,6 @@ _A dynamic and data-uncontaminated benchmark for LLMs on stock prediction tasks_
 
 ## Release
 - [2026/1/17]  🔥[Github repo](https://github.com/BobLiang2113/PriceSeer) for **PriceSeer** is online.
-- [2025/12/31] 🔥PriceSeer submits to ICME 2026 and arxiv.
 
 ## Data Preparation
 _Raw Historical Data_: We collected the daily historical data for the past year (before 2025-11-07) from Yahoo Finance by using the yfinance package. A total of 110 stocks covering 11 sectors, i.e., **Basic Materials (BM), Communication Services (CS), Consumer Cyclical (CC), Consumer Defensive (CD), Energy (EG), Financial Services (FS), Healthcare (HC), Industrials (ID), Real Estate (RE), Technology (TN), and Utilities (UT)**, in the U.S. stock market, were selected. Each stock contains 249 daily data points, including opening price, closing price, daily highest price, daily lowest price, and trading volume. This part serves as the primary ingredient for the stock prediction task.
