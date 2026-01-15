@@ -67,7 +67,7 @@ where N_correct and N_total denote the number of correct predictions of the tren
 
 Furthermore, to make the relative error more intuitive, we convert it to a performance score by logarithmic scaling, which constrains the values to be within the range of 1 to 100, with larger values being preferable:
 <div style="width: 20%; text-align: center; margin:auto;">
-      <img style="width:100%" src="figure/score.png">
+      <img style="width:10%" src="figure/score.png">
   </div>
 where a indicates the penalty coefficient that controls the trade-off between error tolerance and score sensitivity. In this case, a is set to 23 empirically. 
 
