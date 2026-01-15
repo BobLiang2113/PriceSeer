@@ -12,7 +12,7 @@
 _A dynamic and data-uncontaminated benchmark for LLMs on stock prediction tasks_
 
 <div>
-    Bohan Liang</a><sup>1,*</sup>,
+    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=_4irXHgAAAAJ" target="_blank">Bohan Liang</a><sup>1,*</sup>,
     <a href="https://scholar.google.com.hk/citations?user=NSR4UkMAAAAJ&hl=zh-CN" target="_blank">Zijian Chen</a><sup>2,1,*,†</sup>,
     Qi Jia</a><sup>1</sup>,
     Kaiwei Zhang</a><sup>1</sup>,
