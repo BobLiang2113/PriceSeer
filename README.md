@@ -54,21 +54,23 @@ The PriceSeer employs six top-tier, proprietary LLMs as baselines, including **G
 
 ## Evaluation Criteria
 Since stock prediction mainly involves the comparison between predicted and actual prices, we implement the relative error for  valuation, which represents the error ratio of the predicted price, eliminating the impact of price variance:
-<div style="width: 30%; text-align: center; margin:auto;">
-      <img style="width:100%" src="figure/relative_error.png">
-  </div>
+
+<div align="center">
+    <img src="figure/relative_error.png"  width="230" />
+</div>
 where P_pred and P_real denote the predicted and the actual prices, respectively.
 
 We also include the hit rate R, defined as the rate of accurately predicting the price trend: 
-<div style="width: 15%; text-align: center; margin:auto;">
-      <img style="width:100%" src="figure/hit_rate.png">
-  </div>
+
+<div align="center">
+    <img src="figure/hit_rate.png"  width="150" />
+</div>
 where N_correct and N_total denote the number of correct predictions of the trend of increase or decrease and the total prediction times, respectively.
 
 Furthermore, to make the relative error more intuitive, we convert it to a performance score by logarithmic scaling, which constrains the values to be within the range of 1 to 100, with larger values being preferable:
-<div style="width: 20%; text-align: center; margin:auto;">
-      <img style="width:10%" src="figure/score.png">
-  </div>
+<div align="center">
+    <img src="figure/score.png"  width="200" />
+</div>
 where a indicates the penalty coefficient that controls the trade-off between error tolerance and score sensitivity. In this case, a is set to 23 empirically. 
 
 ## Performance Benchmark on Prediction and Investment Tasks 
