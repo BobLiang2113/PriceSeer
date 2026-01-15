@@ -13,8 +13,8 @@ _A dynamic and data-uncontaminated benchmark for LLMs on stock prediction tasks_
 
 <div>
     Bohan Liang</a><sup>1,*</sup>,
-    <a href="" target="_blank">Zijian Chen</a><sup>1,*</sup>,
-    <a href="" target="_blank">Qi Jia</a><sup>2,1,*,†</sup>,
+    <a href="" target="_blank">Zijian Chen</a><sup>2,1,*,†</sup>,
+    <a href="" target="_blank">Qi Jia</a><sup>1</sup>,
     <a href="" target="_blank">Kaiwei Zhang</a><sup>1</sup>,
     <a href="" target="_blank">Kaiyuan Ji</a><sup>3,1</sup>,
     <a href="" target="_blank">Guangtao Zhai</a><sup>1,2,†</sup>
@@ -36,10 +36,10 @@ _A dynamic and data-uncontaminated benchmark for LLMs on stock prediction tasks_
 
 </div>
 
-> Overview of the **PriceSeer**:  We collected stock data in the form of time series and textual news data, covering **11 representative sectors** and **249 historical trading days**. Based on this, we implemented **quantitative finance metric-based** information augmentation and introduced **three tampering ways** to disturb price prediction. The tasks were also designed in multiple prediction horizons.
+Overview of the **PriceSeer**:  We collected stock data in the form of time series and textual news data, covering **11 representative sectors** and **249 historical trading days**. Based on this, we implemented **quantitative finance metric-based** information augmentation and introduced **three tampering ways** to disturb price prediction. The tasks were also designed in multiple prediction horizons.
 
 ## Release
-- [2026/1/17]  🔥[Github repo](https://github.com/BobLiang2113/PriceSeer) for **PriceSeer** is online.
+- [2026/1/15]  🔥[Github repo](https://github.com/BobLiang2113/PriceSeer) for **PriceSeer** is online.
 
 ## Data Preparation
 _Raw Historical Data_: We collected the daily historical data for the past year (before 2025-11-07) from Yahoo Finance by using the yfinance package. A total of 110 stocks covering 11 sectors, i.e., **Basic Materials (BM), Communication Services (CS), Consumer Cyclical (CC), Consumer Defensive (CD), Energy (EG), Financial Services (FS), Healthcare (HC), Industrials (ID), Real Estate (RE), Technology (TN), and Utilities (UT)**, in the U.S. stock market, were selected. Each stock contains 249 daily data points, including opening price, closing price, daily highest price, daily lowest price, and trading volume. This part serves as the primary ingredient for the stock prediction task.
@@ -54,22 +54,22 @@ The PriceSeer employs six top-tier, proprietary LLMs as baselines, including **G
 
 ## Evaluation Criteria
 Since stock prediction mainly involves the comparison between predicted and actual prices, we implement the relative error for  valuation, which represents the error ratio of the predicted price, eliminating the impact of price variance:
-$$
-\eta = \left( \frac{|P_{\text{pred}} - P_{\text{real}}|}{P_{\text{real}}} \right) \times 100\%
-$$
-where $P_\text{pred}$ and $P_\text{real}$ denote the predicted and the actual prices, respectively.
+<div style="width: 30%; text-align: center; margin:auto;">
+      <img style="width:100%" src="figure/relative_error.png">
+  </div>
+where P_pred and P_real denote the predicted and the actual prices, respectively.
 
-We also include the hit rate $R$, defined as the rate of accurately predicting the price trend: 
-$$
-\it{R} = \frac{N_{\text{correct}}}{N_{\text{total}}}
-$$
-where $N_{\text{correct}}$ and $N_{\text{total}}$ denote the number of correct predictions of the trend of increase or decrease and the total prediction times, respectively.
+We also include the hit rate R, defined as the rate of accurately predicting the price trend: 
+<div style="width: 15%; text-align: center; margin:auto;">
+      <img style="width:100%" src="figure/hit_rate.png">
+  </div>
+where N_correct and N_total denote the number of correct predictions of the trend of increase or decrease and the total prediction times, respectively.
 
 Furthermore, to make the relative error more intuitive, we convert it to a performance score by logarithmic scaling, which constrains the values to be within the range of 1 to 100, with larger values being preferable:
-$$
-P = 100 - a \ln(1 + \eta)
-$$
-where $\it{a}$ indicates the penalty coefficient that controls the trade-off between error tolerance and score sensitivity. In this case, $\it{a}$ is set to 23 empirically. 
+<div style="width: 20%; text-align: center; margin:auto;">
+      <img style="width:100%" src="figure/score.png">
+  </div>
+where a indicates the penalty coefficient that controls the trade-off between error tolerance and score sensitivity. In this case, a is set to 23 empirically. 
 
 ## Performance Benchmark on Prediction and Investment Tasks 
 
@@ -116,37 +116,24 @@ where $\it{a}$ indicates the penalty coefficient that controls the trade-off bet
   </div>
 </details>
 
-## Original Oracle Bone Recognition (O2BR) Dataset 📦
-- [x] To be released
-
-<div style="width: 80%; text-align: center; margin:auto;">
-      <img style="width:100%" src="figure/O2BR.png">
-  </div>
-
-## OBI-rejoin Dataset 📦
-- [x] To be released
-
-<div style="width: 80%; text-align: center; margin:auto;">
-      <img style="width:100%" src="figure/OBI-rejoin-vis.jpg">
-  </div>
-
-
 ## Contact 📧
 
 Please contact the first author of this paper for queries.
 
+- Bohan Liang, `liangbohan@pjlab.org.cn`
 - Zijian Chen, `zijian.chen@sjtu.edu.cn`
 
 ## Citation📎
 If you find our work interesting, please feel free to cite our paper:
 ```
-@article{chen2024obi,
-  title={OBI-Bench: Can LMMs Aid in Study of Ancient Script on Oracle Bones?},
-  author={Chen, Zijian and Chen, Tingzhu and Zhang, Wenjun and Zhai, Guangtao},
-  journal={arXiv preprint arXiv:2412.01175},
-  year={2024}
+@misc{liang2025priceseerevaluatinglargelanguage,
+      title={PriceSeer: Evaluating Large Language Models in Real-Time Stock Prediction}, 
+      author={Bohan Liang and Zijian Chen and Qi Jia and Kaiwei Zhang and Kaiyuan Ji and Guangtao Zhai},
+      year={2025},
+      eprint={2601.06088},
+      archivePrefix={arXiv},
+      primaryClass={q-fin.ST},
+      url={https://arxiv.org/abs/2601.06088}, 
 }
 ```
 
-## <a name="acknowledgements"></a> Acknowledgements💡
-We extend our deepest gratitude to the frontline OBI researchers and scholars involved in the meticulous collation and proofreading of the oracle bone inscriptions. It is your persistent manual efforts that have provided a valuable data foundation for the development of artificial intelligence models.
