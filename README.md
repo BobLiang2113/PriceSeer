@@ -118,6 +118,9 @@ where a indicates the penalty coefficient that controls the trade-off between er
   </div>
 </details>
 
+## Dataset
+Dataset has been released on Hugging Face: https://huggingface.co/datasets/BobLiang2113/PriceSeer
+
 ## Contact 📧
 
 Please contact the first author of this paper for queries.
