@@ -39,6 +39,7 @@ _A dynamic and data-uncontaminated benchmark for LLMs on stock prediction tasks_
 Overview of the **PriceSeer**:  We collected stock data in the form of time series and textual news data, covering **11 representative sectors** and **249 historical trading days**. Based on this, we implemented **quantitative finance metric-based** information augmentation and introduced **three tampering ways** to disturb price prediction. The tasks were also designed in multiple prediction horizons.
 
 ## Release
+- [2026/9/14]  🔥 PriceSeer is accepted by IEEE VCIP 2026
 - [2026/1/15]  🔥[Github repo](https://github.com/BobLiang2113/PriceSeer) for **PriceSeer** is online.
 
 ## Data Preparation
